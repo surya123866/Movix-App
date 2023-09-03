@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { getApiConfiguration, getGenres } from "./store/homeSlice";
 import { fetchDataFromApi } from "./utils/api";
 
-import Header from "./components/Header/header";
+import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import Home from "./Pages/home/home";
 import Details from "./Pages/details/details";
