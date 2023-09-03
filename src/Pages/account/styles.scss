@@ -1,10 +1,8 @@
 .account-container {
-  height: 70vh;
-  padding-top: 100px;
-  padding-right: 32px;
-  padding-left: 32px;
-  padding-bottom: 12px;
+  min-height: 98vh;
+  padding: 10px 30px 0;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   background-color: #e5e5e5;
 }
