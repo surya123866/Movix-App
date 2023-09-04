@@ -10,6 +10,8 @@ import { fetchDataFromApi } from "../../utils/api";
 import ContentWrapper from "../../components/contentWrapper/ContentWrapper";
 import MovieCard from "../../components/movieCard/MovieCard";
 import Spinner from "../../components/spinner/Spinner";
+import Header from "../../components/header/Header";
+import Footer from "../../components/footer/Footer";
 
 let filters = {};
 
@@ -97,7 +99,9 @@ const Explore = () => {
   };
 
   return (
-    <div className="explorePage">
+   <>
+   <Header/>
+   <div className="explorePage">
       <ContentWrapper>
         <div className="pageHeader">
           <div className="pageTitle">
@@ -154,6 +158,8 @@ const Explore = () => {
         )}
       </ContentWrapper>
     </div>
+   <Footer/>
+   </>
   );
 };
 

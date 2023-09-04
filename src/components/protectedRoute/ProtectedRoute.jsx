@@ -1,12 +1,20 @@
-import { Route, Redirect } from "react-router-dom";
-import Cookies from "js-cookie";
+import { Route, Navigate } from 'react-router-dom';
+import PropTypes from 'prop-types'; // Import PropTypes
 
-const ProtectedRoute = (props) => {
-  const token = Cookies.get("jwt_token");
-  if (token === undefined) {
-    return <Redirect to="/login" />;
-  }
-  return <Route {...props} />;
+const ProtectedRoute = ({ element: Element = null, isAuthenticated = false, ...rest }) => {
+  console.log(Element)
+  return (
+    <Route
+      {...rest}
+      element={isAuthenticated ? <Element /> : <Navigate to="/login" />}
+    />
+  );
+};
+
+// Add prop type validation
+ProtectedRoute.propTypes = {
+  element: PropTypes.element, 
+  isAuthenticated: PropTypes.bool.isRequired, 
 };
 
 export default ProtectedRoute;

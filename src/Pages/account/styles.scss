@@ -1,10 +1,15 @@
+@import "../../mixins.scss";
+
 .account-container {
   min-height: 98vh;
   padding: 10px 30px 0;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background-color: #e5e5e5;
+  background-color: var(--black);
+}
+.heading{
+  color: white;
 }
 
 .hz-line {
@@ -26,7 +31,7 @@
   font-weight: 600;
   font-size: 18px;
   line-height: 23px;
-  color: #94a3b8;
+  color: white;
   margin-right: 11px;
 }
 
@@ -36,7 +41,7 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 21px;
-  color: #1e293b;
+  color: white;
   margin-bottom: 6px;
 }
 .password {
@@ -45,7 +50,7 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 21px;
-  color: #64748b;
+  color: white;
 }
 .password-container {
   display: flex;
@@ -64,8 +69,8 @@
   font-weight: 600;
   font-size: 14px;
   line-height: 18px;
-  color: #1e293b;
-  border: 1px solid #1e293b;
+  color: white;
+  border: 1px solid white;
   border-radius: 2px;
   padding: 2px 4px;
   height: 22px;
@@ -127,7 +132,4 @@
   .logout-btn {
     margin-top: 40px;
   }
-}
-.footer-sec {
-  background-color: black;
 }

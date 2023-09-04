@@ -43,7 +43,7 @@ const Header = () => {
   }, [lastScrollY]);
 
   const openAccount = () => {
-    navigate("/explore/account");
+    navigate("/account");
   };
 
   const openSearch = () => {
@@ -67,11 +67,11 @@ const Header = () => {
 
   const navigationHandler = (type) => {
     if (type === "home") {
-      navigate("/");
+      navigate("/home");
     } else if (type === "movie") {
       navigate("/explore/movie");
     } else {
-      navigate("explore/tv");
+      navigate("/explore/tv");
     }
     setMobileMenu(false);
   };

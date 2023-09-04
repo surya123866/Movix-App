@@ -4,15 +4,13 @@ import { useDispatch } from "react-redux";
 import { getApiConfiguration, getGenres } from "./store/homeSlice";
 import { fetchDataFromApi } from "./utils/api";
 
-import Header from "./components/header/Header";
-import Footer from "./components/footer/Footer";
 import Home from "./Pages/home/home";
 import Details from "./Pages/details/details";
 import SearchResult from "./Pages/searchResult/searchResult";
 import Explore from "./Pages/explore/explore";
-import Account from "./Pages/account/Account"
+import Account from "./Pages/account/Account";
 import PageNoteFound from "./Pages/404/pageNotFound";
-import Login from './Pages/login/Login'
+import Login from "./Pages/login/Login";
 
 function App() {
   const dispatch = useDispatch();
@@ -55,18 +53,16 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header />
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/:mediaType/:id" element={<Details />} />
         <Route path="/search/:query" element={<SearchResult />} />
         <Route path="/explore/:mediaType" element={<Explore />} />
-        <Route path="/explore/account" element={<Account/>}/>
+        <Route path="/account" element={<Account />} />
         <Route path="/404" element={<PageNoteFound />} />
         <Route path="*" element={<PageNoteFound />} />
       </Routes>
-      <Footer />
     </BrowserRouter>
   );
 }

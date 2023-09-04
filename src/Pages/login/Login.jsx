@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import "./styles.scss";
+import logo from "../../assets/movix-logo.svg";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ const Login = () => {
   const [errorMsg, setErrorMsg] = useState("");
 
   const onLoginSuccess = () => {
-    navigate("/");
+    navigate("/home");
     localStorage.setItem("USERNAME", username);
     localStorage.setItem("PASSWORD", password);
   };
@@ -37,6 +38,11 @@ const Login = () => {
 
   return (
     <div className="login-container">
+       <img
+            className="website-logo"
+            alt="movix logo"
+            src={`${logo}`}
+          />
       <form className="login-form-container" onSubmit={onSubmitForm}>
         <h1 className="heading-login">Login</h1>
         <div className="input-container">

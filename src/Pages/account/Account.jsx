@@ -1,13 +1,18 @@
 import { useNavigate } from "react-router-dom";
 
 import "./styles.scss";
+import Header from "../../components/header/Header";
+import Footer from "../../components/footer/Footer";
 
 const Account = () => {
   const navigate = useNavigate();
   const onClickLogOut = () => {
+    localStorage.clear()
     navigate("/");
   };
   return (
+    <>
+    <Header/>
     <div className="account-container">
       <div>
         <h1 className="heading">Account</h1>
@@ -33,6 +38,8 @@ const Account = () => {
         Logout
       </button>
     </div>
+    <Footer/>
+    </>
   );
 };
 

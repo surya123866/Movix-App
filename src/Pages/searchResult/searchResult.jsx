@@ -9,6 +9,8 @@ import ContentWrapper from "../../components/contentWrapper/ContentWrapper";
 import MovieCard from "../../components/movieCard/MovieCard";
 import Spinner from "../../components/spinner/Spinner";
 import noResults from "../../assets/no-results.png";
+import Header from "../../components/header/Header";
+import Footer from "../../components/footer/Footer";
 
 const SearchResult = () => {
   const [data, setData] = useState(null);
@@ -50,6 +52,8 @@ const SearchResult = () => {
   }, [query]);
 
   return (
+    <>
+    <Header/>
     <div className="searchResultsPage">
       {loading && <Spinner initial={true} />}
       {!loading && (
@@ -85,6 +89,8 @@ const SearchResult = () => {
         </ContentWrapper>
       )}
     </div>
+    <Footer/>
+    </>
   );
 };
 
