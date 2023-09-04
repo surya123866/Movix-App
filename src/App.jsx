@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { getApiConfiguration, getGenres } from "./store/homeSlice";
 import { fetchDataFromApi } from "./utils/api";
 
-import Home from "./Pages/home/Home";
+import Home from "./Pages/home/home";
 import Details from "./Pages/details/details";
 import SearchResult from "./Pages/searchResult/searchResult";
 import Explore from "./Pages/explore/explore";
