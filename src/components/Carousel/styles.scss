@@ -92,6 +92,11 @@
         .carouselItem {
             width: 125px;
             cursor: pointer;
+            transition: all 0.3s;
+            &:hover{
+                transform: scale(1.1);
+                transition: all 0.1s;
+            }
             @include md {
                 width: calc(25% - 15px);
             }

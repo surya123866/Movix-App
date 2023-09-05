@@ -3,6 +3,7 @@ import {
   FaInstagram,
   FaTwitter,
   FaLinkedin,
+  FaGithub,
 } from "react-icons/fa";
 
 import ContentWrapper from "../contentWrapper/ContentWrapper";
@@ -29,16 +30,36 @@ const Footer = () => {
           pariatur.
         </div>
         <div className="socialIcons">
-          <span className="icon">
-            <FaFacebookF />
-          </span>
-          <span className="icon">
-            <FaInstagram />
-          </span>
-          <span className="icon">
-            <FaTwitter />
-          </span>
-
+          <a
+            className="anchor-tag"
+            href="https://www.facebook.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span className="icon">
+              <FaFacebookF />
+            </span>
+          </a>
+          <a
+            className="anchor-tag"
+            href="https://www.instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span className="icon">
+              <FaInstagram />
+            </span>
+          </a>
+          <a
+            className="anchor-tag"
+            href="https://twitter.com/i/flow/login"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span className="icon">
+              <FaTwitter />
+            </span>
+          </a>
           <a
             className="anchor-tag"
             href="https://www.linkedin.com/in/suryakommanapalli"
@@ -47,6 +68,16 @@ const Footer = () => {
           >
             <span className="icon">
               <FaLinkedin />
+            </span>
+          </a>
+          <a
+            className="anchor-tag"
+            href="https://github.com/surya123866"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span className="icon">
+              <FaGithub />
             </span>
           </a>
         </div>
