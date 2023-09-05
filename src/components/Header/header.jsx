@@ -42,10 +42,6 @@ const Header = () => {
     };
   }, [lastScrollY]);
 
-  const openAccount = () => {
-    navigate("/account");
-  };
-
   const openSearch = () => {
     setMobileMenu(false);
     setShowSearch(true);
@@ -66,13 +62,24 @@ const Header = () => {
   };
 
   const navigationHandler = (type) => {
-    if (type === "home") {
-      navigate("/home");
-    } else if (type === "movie") {
-      navigate("/explore/movie");
-    } else {
-      navigate("/explore/tv");
+    let path = "";
+
+    switch (type) {
+      case "home":
+        path = "/home";
+        break;
+      case "movie":
+        path = "/explore/movie";
+        break;
+      case "TV":
+        path = "/explore/tv";
+        break;
+      default:
+        path = "/account";
+        break;
     }
+
+    navigate(path);
     setMobileMenu(false);
   };
 
@@ -94,19 +101,37 @@ const Header = () => {
           <li className="menuItem" onClick={() => navigationHandler("TV")}>
             TV Shows
           </li>
+          {mobileMenu ? (
+            <li
+              className="menuItem"
+              onClick={() => navigationHandler("account")}
+            >
+              Account
+            </li>
+          ) : (
+            ""
+          )}
           <li className="menuItem">
-            <HiOutlineSearch onClick={openSearch} />
-          </li>
-          <li className="menuItem">
-            <img
-              src="https://res.cloudinary.com/dtghbuzfj/image/upload/v1686459977/Avatar_pjoiug.png"
-              alt="avatar"
-              onClick={openAccount}
-            />
+            {mobileMenu ? (
+              ""
+            ) : (
+              <>
+                <HiOutlineSearch onClick={openSearch} />
+                <li className="menuItem">
+                  <img
+                    src="https://res.cloudinary.com/dtghbuzfj/image/upload/v1686459977/Avatar_pjoiug.png"
+                    alt="avatar"
+                    className="menuItem"
+                    onClick={() => navigationHandler("account")}
+                  />
+                </li>
+              </>
+            )}
           </li>
         </ul>
         <div className="mobileMenuItems">
           <HiOutlineSearch onClick={openSearch} />
+
           {mobileMenu ? (
             <VscChromeClose onClick={() => setMobileMenu(false)} />
           ) : (
@@ -120,7 +145,7 @@ const Header = () => {
             <div className="searchInput">
               <input
                 type="text"
-                placeholder="Search for a movie or a tv show..."
+                placeholder="Search for a movie or a TV show..."
                 onChange={(e) => setQuery(e.target.value)}
                 onKeyUp={searchQueryHandler}
               />
@@ -138,4 +163,3 @@ const Header = () => {
 };
 
 export default Header;
-
